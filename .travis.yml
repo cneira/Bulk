@@ -1,0 +1,18 @@
+language: cpp
+
+notifications:
+    slack: coduin:ORmY5MLvHyswy1xF4NnMgaQV
+
+addons:
+  apt:
+    packages:
+      - g++-6
+    sources: &sources
+      - ubuntu-toolchain-r-test
+
+compiler:
+  - clang
+  - gcc
+
+install: make get-deps
+script: make && make test
